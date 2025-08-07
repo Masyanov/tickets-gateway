@@ -13,9 +13,9 @@ REST API для работы с билетным шлюзом.
 
 4. Доступные эндпоинты:
 - GET /api/shows — список мероприятий
-- GET /api/shows/{id} — детали мероприятия
-- GET /api/events/{id} — детали события
-- POST /api/events/{id}/book — бронирование мест
+- GET /api/shows/{showId}/events — детали мероприятия
+- GET /api/events/{eventId}/places — детали события
+- POST /api/events/{eventId}/reserve — бронирование мест
 
 5. Документация Swagger доступна по:
 
