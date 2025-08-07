@@ -1,0 +1,109 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tickets Gateway API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/shows": {
+            "get": {
+                "summary": "Get list of shows",
+                "operationId": "f2c43cfd76bf2cfbf356287585a106fe",
+                "responses": {
+                    "200": {
+                        "description": "List of shows"
+                    }
+                }
+            }
+        },
+        "/api/shows/{showId}/events": {
+            "get": {
+                "summary": "Get events list for a show",
+                "operationId": "f940e0dbd5cc1c5c829c7dc9555d6b21",
+                "parameters": [
+                    {
+                        "name": "showId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of events"
+                    }
+                }
+            }
+        },
+        "/api/events/{eventId}/places": {
+            "get": {
+                "summary": "Get places for event",
+                "operationId": "b8ef71fe5f48cdb1f38259550e6e63ee",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Places data"
+                    }
+                }
+            }
+        },
+        "/api/events/{eventId}/reserve": {
+            "post": {
+                "summary": "reserve places for event",
+                "operationId": "24475db2691c1ece8ce054275a041a5f",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "places",
+                                    "name"
+                                ],
+                                "properties": {
+
+                                    "places": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "reservation result"
+                    }
+                }
+            }
+        }
+    }
+}
