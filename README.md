@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tickets Gateway
 
 ## Описание
@@ -31,3 +32,6 @@ http://localhost:8000/api/documentation
 Этот подход позволяет легко поменять поставщика билетов: достаточно добавить новую реализацию TicketProviderInterface и переключить биндинг в сервис-контейнере.
 
 
+=======
+# tickets-gateway
+>>>>>>> 036c1b799652fddbb3c9c8dbb1cf9f49a66da860
